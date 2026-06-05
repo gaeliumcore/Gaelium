@@ -1,0 +1,33 @@
+# /etc/conf.d/gaeliumd: config file for /etc/init.d/gaeliumd
+
+# Config file location
+#GAELIUMD_CONFIGFILE="/etc/gaelium/gaelium.conf"
+
+# What directory to write pidfile to?  (created and owned by $GAELIUMD_USER)
+#GAELIUMD_PIDDIR="/var/run/gaeliumd"
+
+# What filename to give the pidfile
+#GAELIUMD_PIDFILE="${GAELIUMD_PIDDIR}/gaeliumd.pid"
+
+# Where to write gaeliumd data (be mindful that the blockchain is large)
+#GAELIUMD_DATADIR="/var/lib/gaeliumd"
+
+# User and group to own gaeliumd process
+#GAELIUMD_USER="gaelium"
+#GAELIUMD_GROUP="gaelium"
+
+# Path to gaeliumd executable
+#GAELIUMD_BIN="/usr/bin/gaeliumd"
+
+# Nice value to run gaeliumd under
+#GAELIUMD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#GAELIUMD_OPTS=""
+
+# The timeout in seconds OpenRC will wait for gaeliumd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+GAELIUMD_SIGTERM_TIMEOUT=60

@@ -1,0 +1,8 @@
+/usr/bin/gaelium-cli		--	gen_context(system_u:object_r:gaelium_exec_t,s0)
+/usr/sbin/gaeliumd		--	gen_context(system_u:object_r:gaelium_exec_t,s0)
+/usr/lib(64)?/gaelium/gaeliumd		--	gen_context(system_u:object_r:gaelium_exec_t,s0)
+
+/etc/gaelium(/.*)?		gen_context(system_u:object_r:gaelium_conf_t,s0)
+/var/lib/gaelium(/.*)?		gen_context(system_u:object_r:gaelium_var_lib_t,s0)
+
+(/var)?/run/gaeliumd(/.*)?   gen_context(system_u:object_r:gaelium_var_run_t,s0)

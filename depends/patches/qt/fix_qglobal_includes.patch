@@ -1,0 +1,10 @@
+--- a/qtbase/src/corelib/global/qglobal.h
++++ b/qtbase/src/corelib/global/qglobal.h
+@@ -42,6 +42,7 @@
+ #ifdef __cplusplus
+ #  include <type_traits>
+ #  include <cstddef>
++#  include <limits>
+ #  include <utility>
+ #endif
+ 

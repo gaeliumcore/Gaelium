@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gaelium Core
+Comment=Connect to the Gaelium P2P Network
+Comment[de]=Verbinde mit dem Gaelium peer-to-peer Netzwerk
+Comment[fr]=Gaelium, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Gaelium, eşten eşe kriptografik sanal para birimi
+Exec=gaelium-qt %u
+Terminal=false
+Type=Application
+Icon=gaelium128
+MimeType=x-scheme-handler/gaelium;
+Categories=Office;Finance;

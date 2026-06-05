@@ -1,0 +1,6 @@
+usr/local/bin/gaelium-qt usr/bin
+share/pixmaps/gaelium32.xpm usr/share/pixmaps
+share/pixmaps/gaelium16.xpm usr/share/pixmaps
+share/pixmaps/gaelium128.png usr/share/pixmaps
+debian/gaelium-qt.desktop usr/share/applications
+debian/gaelium-qt.protocol usr/share/kde4/services/

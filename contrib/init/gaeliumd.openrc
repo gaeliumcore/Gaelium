@@ -1,0 +1,92 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/gaelium/.gaelium" ]; then
+	GAELIUMD_DEFAULT_DATADIR="/var/lib/gaelium/.gaelium"
+else
+	GAELIUMD_DEFAULT_DATADIR="/var/lib/gaeliumd"
+fi
+
+GAELIUMD_CONFIGFILE=${GAELIUMD_CONFIGFILE:-/etc/gaelium/gaelium.conf}
+GAELIUMD_PIDDIR=${GAELIUMD_PIDDIR:-/var/run/gaeliumd}
+GAELIUMD_PIDFILE=${GAELIUMD_PIDFILE:-${GAELIUMD_PIDDIR}/gaeliumd.pid}
+GAELIUMD_DATADIR=${GAELIUMD_DATADIR:-${GAELIUMD_DEFAULT_DATADIR}}
+GAELIUMD_USER=${GAELIUMD_USER:-${GAELIUM_USER:-gaelium}}
+GAELIUMD_GROUP=${GAELIUMD_GROUP:-gaelium}
+GAELIUMD_BIN=${GAELIUMD_BIN:-/usr/bin/gaeliumd}
+GAELIUMD_NICE=${GAELIUMD_NICE:-${NICELEVEL:-0}}
+GAELIUMD_OPTS="${GAELIUMD_OPTS:-${GAELIUM_OPTS}}"
+
+name="Gaelium Core Daemon"
+description="Gaelium cryptocurrency P2P network daemon"
+
+command="/usr/bin/gaeliumd"
+command_args="-pid=\"${GAELIUMD_PIDFILE}\" \
+		-conf=\"${GAELIUMD_CONFIGFILE}\" \
+		-datadir=\"${GAELIUMD_DATADIR}\" \
+		-daemon \
+		${GAELIUMD_OPTS}"
+
+required_files="${GAELIUMD_CONFIGFILE}"
+start_stop_daemon_args="-u ${GAELIUMD_USER} \
+			-N ${GAELIUMD_NICE} -w 2000"
+pidfile="${GAELIUMD_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${GAELIUMD_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${GAELIUMD_USER}:${GAELIUMD_GROUP}" \
+	"${GAELIUMD_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${GAELIUMD_USER}:${GAELIUMD_GROUP}" \
+	"${GAELIUMD_PIDDIR}"
+
+	checkpath -f \
+	-o ${GAELIUMD_USER}:${GAELIUMD_GROUP} \
+	-m 0660 \
+	${GAELIUMD_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${GAELIUMD_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run gaeliumd."
+		eerror "The setting must appear in ${GAELIUMD_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"Gaelium Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

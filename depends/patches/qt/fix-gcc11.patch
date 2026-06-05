@@ -1,0 +1,20 @@
+--- a/qtbase/src/corelib/global/qendian.h
++++ b/qtbase/src/corelib/global/qendian.h
+@@ -40,6 +40,7 @@
+ #ifndef QENDIAN_H
+ #define QENDIAN_H
+ 
++#include <limits>
+ #include <QtCore/qfloat16.h>
+ #include <QtCore/qglobal.h>
+ 
+--- a/qtbase/src/corelib/global/qfloat16.h
++++ b/qtbase/src/corelib/global/qfloat16.h
+@@ -40,6 +40,7 @@
+ #ifndef QFLOAT16_H
+ #define QFLOAT16_H
+ 
++#include <limits>
+ #include <QtCore/qglobal.h>
+ #include <QtCore/qmetatype.h>
+ #include <string.h>

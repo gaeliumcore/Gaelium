@@ -1,0 +1,11 @@
+--- validation.cpp.orig
++++ validation.cpp
+@@ -3517,6 +3517,8 @@
+     }
+     uint256 mix_hash;
+     // Check proof of work matches claimed amount
++    // TEMPORARY: Skip PoW for block 1
++    if (block.nHeight == 1) return true;
+     if (fCheckPOW && !CheckProofOfWork(block.GetHashFull(mix_hash), block.nBits, consensusParams)) {
+         return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed");
+     }

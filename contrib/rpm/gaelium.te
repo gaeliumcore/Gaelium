@@ -1,0 +1,81 @@
+policy_module(gaelium, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type gaelium_t;
+type gaelium_exec_t;
+init_daemon_domain(gaelium_t, gaelium_exec_t)
+
+permissive gaelium_t;
+
+type gaelium_initrc_exec_t;
+init_script_file(gaelium_initrc_exec_t)
+
+type gaelium_conf_t;
+files_type(gaelium_conf_t)
+
+type gaelium_var_lib_t;
+files_type(gaelium_var_lib_t)
+
+type gaelium_var_run_t;
+files_type(gaelium_var_run_t)
+
+type gaelium_port_t;
+corenet_port(gaelium_port_t)
+
+########################################
+#
+# gaelium local policy
+#
+allow gaelium_t self:process { fork };
+
+allow gaelium_t self:fifo_file rw_fifo_file_perms;
+allow gaelium_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(gaelium_t, gaelium_conf_t, gaelium_conf_t)
+manage_files_pattern(gaelium_t, gaelium_conf_t, gaelium_conf_t)
+
+manage_dirs_pattern(gaelium_t, gaelium_var_lib_t, gaelium_var_lib_t)
+manage_files_pattern(gaelium_t, gaelium_var_lib_t, gaelium_var_lib_t)
+files_var_lib_filetrans(gaelium_t, gaelium_var_lib_t, { dir file })
+
+manage_dirs_pattern(gaelium_t, gaelium_var_run_t, gaelium_var_run_t)
+manage_files_pattern(gaelium_t, gaelium_var_run_t, gaelium_var_run_t)
+
+sysnet_dns_name_resolve(gaelium_t)
+corenet_all_recvfrom_unlabeled(gaelium_t)
+
+allow gaelium_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(gaelium_t)
+corenet_tcp_sendrecv_generic_node(gaelium_t)
+corenet_tcp_sendrecv_all_ports(gaelium_t)
+corenet_tcp_bind_generic_node(gaelium_t)
+
+gen_require(`
+    type gaelium_port_t;
+')
+allow gaelium_t gaelium_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type gaelium_port_t;
+')
+allow gaelium_t gaelium_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(gaelium_t)
+
+files_read_etc_files(gaelium_t)
+
+miscfiles_read_localization(gaelium_t)
+
+sysnet_dns_name_resolve(gaelium_t)
+
+allow gaelium_t gaelium_exec_t:file execute_no_trans;
+allow gaelium_t self:process setsched;
+corecmd_exec_ls(gaelium_t)
+corenet_tcp_connect_http_port(gaelium_t)
+dev_read_urand(gaelium_t)
+fs_getattr_xattr_fs(gaelium_t)
+kernel_read_system_state(gaelium_t)
