@@ -50,7 +50,7 @@ Supported miners: TeamRedMiner, GMiner, T-Rex, NBMiner
 - 🌐 Website: https://gaelium.io
 - 🔍 Explorer: https://explorer.gaelium.io
 - ⛏️ Pool: https://pool.gaelium.io
-- 📄 Whitepaper: https://gaelium.io/gaelium-whitepaper.pdf
+- 📄 Whitepaper: https://gaelium.io/gaelium-whitepaper-2026.pdf
 - 💬 Telegram: https://t.me/gaelium
 - 𝕏 Twitter/X: https://twitter.com/gaeliumcore
 - 💬 Discord: https://discord.gg/sCVbvKRD
