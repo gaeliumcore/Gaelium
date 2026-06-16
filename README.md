@@ -53,7 +53,7 @@ Supported miners: TeamRedMiner, GMiner, T-Rex, NBMiner
 - 📄 Whitepaper: https://gaelium.io/gaelium-whitepaper-2026.pdf
 - 💬 Telegram: https://t.me/gaelium
 - 𝕏 Twitter/X: https://twitter.com/gaeliumcore
-- 💬 Discord: https://discord.gg/sCVbvKRD
+- 💬 Discord: https://discord.gg/FWYEwnwu3p
 
 ## License
 
