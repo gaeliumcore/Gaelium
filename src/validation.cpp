@@ -4161,6 +4161,22 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationSta
     if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
         return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, "incorrect proof of work");
 
+    // Enforce that the height declared in the KAWPOW header matches the height
+    // derived from the chain (pindexPrev->nHeight + 1). The declared nHeight is
+    // fully attacker controlled (primitives/block.h) and is otherwise never
+    // compared against the real position of the block. A block carrying a lying
+    // nHeight but a valid proof of work would be accepted, then make the node
+    // unable to restart: on reload txdb.cpp recomputes the KAWPOW proof of work
+    // from the derived height and fails, aborting the whole block database load.
+    // This check is unconditional: no activation height, no checkpoint. Genesis
+    // never reaches this function (pindexPrev is asserted non-null above and
+    // AcceptBlockHeader routes the genesis hash around this path). The nTime
+    // guard mirrors CheckBlockHeader so that pre-KAWPOW headers, which do not
+    // serialize nHeight at all, are left untouched.
+    if (block.nTime >= nKAWPOWActivationTime && block.nHeight != (uint32_t)nHeight)
+        return state.DoS(100, false, REJECT_INVALID, "bad-blk-height", false,
+                         strprintf("block header height %u does not match expected height %d", block.nHeight, nHeight));
+
     // Check against checkpoints
     if (fCheckpointsEnabled) {
         // Don't accept any forks from the main chain prior to last checkpoint.
