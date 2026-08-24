@@ -24,7 +24,7 @@ and long-term accountability.
 | Supply | 1,000,000,000 GAEL + 5 GAEL/block perpetual |
 | Confirmations | 100 blocks |
 | P2P Port | 18100 |
-| RPC Port | 18080 |
+| RPC Port | 8766 (daemon default) |
 
 ## Downloads
 
