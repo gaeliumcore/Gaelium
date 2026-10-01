@@ -35,7 +35,7 @@
 
 std::string MessageActivationWarning()
 {
-    return AreMessagesDeployed() ? "" : "\nTHIS COMMAND IS NOT YET ACTIVE!\nhttps://github.com/gaeliumcore/rips/blob/master/rip-0005.mediawiki\n";
+    return AreMessagesDeployed() ? "" : "\nAssets are not supported on Gaelium.\n";
 }
 
 UniValue viewallmessages(const JSONRPCRequest& request) {

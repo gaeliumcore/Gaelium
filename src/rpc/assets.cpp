@@ -66,12 +66,12 @@ void CheckRestrictedAssetTransferInputs(const CWalletTx& transaction, const std:
 
 std::string AssetActivationWarning()
 {
-    return AreAssetsDeployed() ? "" : "\nTHIS COMMAND IS NOT YET ACTIVE!\nhttps://github.com/gaeliumcore/rips/blob/master/rip-0002.mediawiki\n";
+    return AreAssetsDeployed() ? "" : "\nAssets are not supported on Gaelium.\n";
 }
 
 std::string RestrictedActivationWarning()
 {
-    return AreRestrictedAssetsDeployed() ? "" : "\nTHIS COMMAND IS NOT YET ACTIVE! Restricted assets must be active\n\n";
+    return AreRestrictedAssetsDeployed() ? "" : "\nAssets are not supported on Gaelium.\n";
 }
 
 std::string AssetTypeToString(AssetType& assetType)
