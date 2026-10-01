@@ -2,7 +2,7 @@
 
 This issue tracker is only for technical issues related to Gaelium.
 
-General Gaelium questions and/or support requests and are best directed to the [Gaelium Discord](https://discord.gg/jn6uhur)).
+General Gaelium questions and/or support requests and are best directed to the [Gaelium Discord](https://discord.com/invite/FWYEwnwu3p)).
 
 For reporting security issues, please direct message one of the core developers in discord.
 

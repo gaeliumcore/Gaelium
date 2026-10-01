@@ -1,7 +1,7 @@
 Gaelium Core version *2.2.2* is now available!!
 ==============
 
-  <https://github.com/gaeliumcore/Gaelium/releases/tag/v2.2.2>
+  <https://github.com/RavenProject/Ravencoin/releases/tag/v2.2.2>
 
 
 This is a major release containing bug fixes and enhancements for 2.2.0/2.2.1.  It is highly recommended that users 
@@ -13,7 +13,7 @@ Please report bugs using the issue tracker at GitHub:
 
 To receive security and update notifications, please subscribe to:
 
-  <https://gaelium.io/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============

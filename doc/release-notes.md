@@ -1,20 +1,12 @@
 (note: this is a temporary file, to be added-to by anybody, and moved to
 release-notes at release time)
 
-Gaelium Core version *version* is now available from:
-
-  <https://gaelium.io/bin/gaelium-core-*version*/>
-
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
   <https://github.com/gaeliumcore/Gaelium/issues>
-
-To receive security and update notifications, please subscribe to:
-
-  <https://gaelium.io/en/list/announcements/join/>
 
 How to Upgrade
 ==============
@@ -92,4 +84,4 @@ Credits
 Thanks to everyone who directly contributed to this release:
 
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/gaelium/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).

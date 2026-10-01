@@ -44,11 +44,11 @@ related to the DNS seed operation.
 If these expectations cannot be satisfied the operator should
 discontinue providing services and contact the active Gaelium
 Core development team by sending an email to:
-[feedback@gaelium.io](mailto:feedback@gaelium.io).
+[contact@gaelium.io](mailto:contact@gaelium.io).
 
 Behavior outside of these expectations may be reasonable in some
 situations but should be discussed in public in advance.
 
 See also
 ----------
-- [gaelium-seeder](https://github.com/gaeliumcore/gaelium-seeder) is a reference implementation of a DNS seed.
+- [ravencoin-seeder](https://github.com/RavenProject/ravencoin-seeder) is a reference implementation of a DNS seed.

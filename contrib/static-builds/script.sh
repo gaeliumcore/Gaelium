@@ -29,7 +29,7 @@ cd ~/
 # Removes any existing builds and starts clean WARNING
 rm -rf ~/gaelium ~/sign ~/release
 
-git clone https://github.com/gaeliumproject/gaelium
+git clone https://github.com/gaeliumcore/Gaelium
 cd ~/gaelium
 git checkout $BRANCH
 

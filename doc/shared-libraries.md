@@ -43,7 +43,7 @@ The interface is defined in the C header `gaeliumconsensus.h` located in  `src/s
 - `gaeliumconsensus_ERR_AMOUNT_REQUIRED` - Input amount is required if WITNESS is used
 
 ### Example Implementations
-- [NGaelium](https://github.com/NicolasDorier/NGaelium/blob/master/NGaelium/Script.cs#L814) (.NET Bindings)
+- [NBitcoin](https://github.com/NicolasDorier/NBitcoin/blob/master/NBitcoin/Script.cs#L814) (.NET Bindings)
 - [node-libgaeliumconsensus](https://github.com/bitpay/node-libgaeliumconsensus) (Node.js Bindings)
 - [java-libgaeliumconsensus](https://github.com/dexX7/java-libgaeliumconsensus) (Java Bindings)
 - [gaeliumconsensus-php](https://github.com/Bit-Wasp/gaeliumconsensus-php) (PHP Bindings)

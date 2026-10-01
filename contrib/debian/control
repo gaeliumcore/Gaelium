@@ -26,9 +26,9 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://gaelium.org/
-Vcs-Git: git://github.com/GaeliumProject/Gaelium.git
-Vcs-Browser: https://github.com/GaeliumProject/Gaelium
+Homepage: https://gaelium.io/
+Vcs-Git: https://github.com/gaeliumcore/Gaelium.git
+Vcs-Browser: https://github.com/gaeliumcore/Gaelium
 
 Package: gaeliumd
 Architecture: any

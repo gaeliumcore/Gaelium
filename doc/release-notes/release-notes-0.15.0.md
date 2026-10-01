@@ -1,6 +1,6 @@
 Gaelium Core version *0.15.0* is now available from:
 
-  <https://gaelium.io/bin/gaelium-core-0.15.0/>
+  <https://bitcoin.org/bin/bitcoin-core-0.15.0/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
@@ -11,7 +11,7 @@ Please report bugs using the issue tracker at GitHub:
 
 To receive security and update notifications, please subscribe to:
 
-  <https://gaelium.io/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
@@ -875,4 +875,4 @@ Thanks to everyone who directly contributed to this release:
 - Warren Togami
 - Wladimir J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/gaelium/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).

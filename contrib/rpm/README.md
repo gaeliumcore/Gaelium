@@ -156,7 +156,7 @@ developed on (CentOS 7).
 ## Legacy Credit
 
 This RPM spec file is largely based upon the work of Michael Hampton at
-[Ringing Liberty](https://www.ringingliberty.com/gaelium/). He has been
+[Ringing Liberty](https://www.ringingliberty.com/bitcoin/). He has been
 packaging Gaelium for Fedora at least since 2012.
 
 Most of the differences between his packaging and this package are stylistic in

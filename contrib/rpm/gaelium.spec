@@ -20,24 +20,24 @@ Summary:	Peer to Peer Cryptographic Currency
 
 Group:		Applications/System
 License:	MIT
-URL:		https://gaelium.org/
-Source0:	https://gaelium.org/bin/gaelium-core-%{version}/gaelium-%{version}.tar.gz
+URL:		https://gaelium.io/
+Source0:	https://gaelium.io/bin/gaelium-core-%{version}/gaelium-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/gaelium/gaelium/v%{version}/contrib/debian/examples/gaelium.conf
+Source10:	https://raw.githubusercontent.com/gaeliumcore/Gaelium/v%{version}/contrib/debian/examples/gaelium.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/gaelium/gaelium/v%{version}/doc/man/gaeliumd.1
-Source21:	https://raw.githubusercontent.com/gaelium/gaelium/v%{version}/doc/man/gaelium-cli.1
-Source22:	https://raw.githubusercontent.com/gaelium/gaelium/v%{version}/doc/man/gaelium-qt.1
+Source20:	https://raw.githubusercontent.com/gaeliumcore/Gaelium/v%{version}/doc/man/gaeliumd.1
+Source21:	https://raw.githubusercontent.com/gaeliumcore/Gaelium/v%{version}/doc/man/gaelium-cli.1
+Source22:	https://raw.githubusercontent.com/gaeliumcore/Gaelium/v%{version}/doc/man/gaelium-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/gaelium/gaelium/v%{version}/contrib/rpm/gaelium.te
+Source30:	https://raw.githubusercontent.com/gaeliumcore/Gaelium/v%{version}/contrib/rpm/gaelium.te
 # Source31 - what about gaelium-tx and bench_gaelium ???
-Source31:	https://raw.githubusercontent.com/gaelium/gaelium/v%{version}/contrib/rpm/gaelium.fc
-Source32:	https://raw.githubusercontent.com/gaelium/gaelium/v%{version}/contrib/rpm/gaelium.if
+Source31:	https://raw.githubusercontent.com/gaeliumcore/Gaelium/v%{version}/contrib/rpm/gaelium.fc
+Source32:	https://raw.githubusercontent.com/gaeliumcore/Gaelium/v%{version}/contrib/rpm/gaelium.if
 
-Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Gaelium.svg
+Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
 
 %if 0%{?_use_libressl:1}
 BuildRequires:	libressl-devel
@@ -439,4 +439,4 @@ rm -rf %{buildroot}
 - Initial spec file for 0.12.0 release
 
 # This spec file is written from scratch but a lot of the packaging decisions are directly
-# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/gaelium/
+# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/bitcoin/

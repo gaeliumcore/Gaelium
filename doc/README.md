@@ -99,9 +99,7 @@ To resolve, you will need to copy libboost_system.dylib to libboost_system-mt.dy
 
 ### Need Help?
 
-- See the documentation at the [Gaelium Wiki](https://gaelium.wiki/wiki/Gaelium_Wiki)
-for help and more information.
-- Ask for help on [Discord](https://discord.gg/DUkcBst), [Telegram](https://t.me/GaeliumDev) or [Reddit](https://www.reddit.com/r/Gaelium/).
+- Ask for help on [Discord](https://discord.com/invite/FWYEwnwu3p).
 
 Building from source
 ---------------------
@@ -132,9 +130,8 @@ Gaelium repo's [root README](https://github.com/gaeliumcore/Gaelium/blob/master/
 - [Benchmarking](https://github.com/gaeliumcore/Gaelium/blob/master/doc/benchmarking.md)
 
 ### Resources
-- Discuss on chat [Discord](https://discord.gg/jn6uhur), [Telegram](https://t.me/GaeliumDev) or [Reddit](https://www.reddit.com/r/Gaelium/).
-- Find out more on the [Gaelium Wiki](https://gaelium.wiki/wiki/Gaelium_Wiki)
-- Visit the project home [Gaelium.org](https://gaelium.io)
+- Discuss on chat [Discord](https://discord.com/invite/FWYEwnwu3p).
+- Visit the project home [gaelium.io](https://gaelium.io)
 
 ### Miscellaneous
 - [Assets Attribution](https://github.com/gaeliumcore/Gaelium/blob/master/doc/assets-attribution.md)
