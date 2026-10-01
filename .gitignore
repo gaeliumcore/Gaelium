@@ -29,6 +29,11 @@ regtest_data/
 *.la
 /libtool
 src/config/stamp-h1
+src/config/gaelium-config.h
+contrib/devtools/split-debug.sh
+share/qt/Info.plist
+.ccache/
+src/.libs/
 config.log
 config.status
 src/qt/moc_*.cpp
