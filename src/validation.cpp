@@ -1322,7 +1322,6 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
 
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
-    // === PRODUCTION EMISSION SCHEDULE ===
     // Total supply: 1,000,000,000 GAEL over ~12.5 years + 5 GAEL perpetual
     // Block time: 120 seconds
 
@@ -1336,7 +1335,6 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     if (nHeight >= 1050001)     return 200 * COIN;     // ~24 months  (105,000,000 GAEL)
     if (nHeight >= 525001)      return 500 * COIN;     // ~24 months  (262,500,000 GAEL)
     return 1000 * COIN;                                // ~24 months  (524,999,000 GAEL)
-    // GAEL-EMISSION-END
 }
 
 

@@ -33,8 +33,6 @@ if test -d "$DEPENDS_DIR"; then
   DEPENDS_DIR_ABS=`cd "$DEPENDS_DIR" 2>/dev/null && pwd -P`
   CPPFLAGS="$CPPFLAGS -I$DEPENDS_DIR_ABS/include"
   LDFLAGS="$LDFLAGS -L$DEPENDS_DIR_ABS/lib"
-  # will be replaced
-  # will be replaced
 fi
 AC_SUBST([DEPENDS_DIR],[$DEPENDS_DIR_ABS])
 AM_CONDITIONAL([HAVE_DEPENDS_DIR], [test -d "$DEPENDS_DIR"])
