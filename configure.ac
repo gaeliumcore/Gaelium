@@ -28,7 +28,6 @@ if test "x${ARFLAGS+set}" != "xset"; then
 fi
 
 AC_CANONICAL_HOST
-dnl === GPT_DEPENDS_BLOCK BEGIN ===
 DEPENDS_DIR="$srcdir/depends/$host"
 if test -d "$DEPENDS_DIR"; then
   DEPENDS_DIR_ABS=`cd "$DEPENDS_DIR" 2>/dev/null && pwd -P`
@@ -39,8 +38,6 @@ if test -d "$DEPENDS_DIR"; then
 fi
 AC_SUBST([DEPENDS_DIR],[$DEPENDS_DIR_ABS])
 AM_CONDITIONAL([HAVE_DEPENDS_DIR], [test -d "$DEPENDS_DIR"])
-dnl === GPT_DEPENDS_BLOCK END ===
-dnl === GPT_BDB_BLOCK BEGIN ===
 AC_LANG_PUSH([C++])
 AC_ARG_WITH([bdb], [AS_HELP_STRING([--with-bdb=PATH], [chemin du prefix Berkeley DB (défaut: depends/$host)])], [bdb_prefix="$withval"], [bdb_prefix="$DEPENDS_DIR"])
 if test -n "$bdb_prefix" -a -d "$bdb_prefix"; then
@@ -58,7 +55,6 @@ AC_SUBST([BDB_CPPFLAGS])
 AC_SUBST([BDB_LDFLAGS])
 AC_SUBST([BDB_LIBS])
 AC_LANG_POP([C++])
-dnl === GPT_BDB_BLOCK END ===
 
 AH_TOP([#ifndef GAELIUM_CONFIG_H])
 AH_TOP([#define GAELIUM_CONFIG_H])
