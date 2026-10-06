@@ -424,10 +424,16 @@ bool TipMayBeStale(const Consensus::Params &consensusParams)
     return g_last_tip_update < GetTime() - consensusParams.nPowTargetSpacing * 3 && mapBlocksInFlight.empty();
 }
 
+/** Maximum tip age for fetching announced blocks directly from the announcing peer.
+ *  A fixed duration (20 x 600 s, as in Bitcoin) rather than a multiple of the target
+ *  spacing, so that a block found after a long gap is still fetched from a peer that
+ *  cannot serve historical blocks. */
+static const int64_t DIRECT_FETCH_MAX_TIP_AGE = 20 * 10 * 60;
+
 // Requires cs_main
 bool CanDirectFetch(const Consensus::Params &consensusParams)
 {
-    return chainActive.Tip()->GetBlockTime() > GetAdjustedTime() - consensusParams.nPowTargetSpacing * 20;
+    return chainActive.Tip()->GetBlockTime() > GetAdjustedTime() - DIRECT_FETCH_MAX_TIP_AGE;
 }
 
 // Requires cs_main
