@@ -43,6 +43,12 @@ Connect your miner to our official pool:
 stratum+tcp://pool.gaelium.io:3638
 ```
 
+### Community pools
+
+- **VEIN Pool** (EU, France) — PPLNS & SOLO — https://veinpool.fr/coin/gael
+  - PPLNS: `stratum+tcp://veinpool.fr:3240`
+  - SOLO: `stratum+tcp://veinpool.fr:3242`
+
 Supported miners: TeamRedMiner, GMiner, T-Rex, NBMiner
 
 ## Links
